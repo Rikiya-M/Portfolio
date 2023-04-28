@@ -1,22 +1,19 @@
 @charset "utf-8";
 
+body{
+	margin: 0;
+}
+
 header{
     position: fixed;
-	top: 0px;
-	display: flex;
-    z-index: 3;
-	padding: 0.8rem;
+    top: 0;
+    display: flex;
+    margin: 0;
+    padding: 1.5rem;
+    z-index: 99;
 }
 
-#detail_home{
-	margin-bottom: -50px;
-	margin-right: 5px;
-	transition: .3s;
-}
 
-#detail_home:hover{
-	filter: opacity(100%);
-}
 
 
 
