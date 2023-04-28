@@ -16,7 +16,7 @@ if (splash_text != myYear + myMonth + myDate) {//cookieデータとアクセス�
 		var myDate = String(myD.getDate());
 		$.cookie('accessdate', myYear + myMonth + myDate); //accessdateキーで年月日を記録
 	});
-}, 1000);
+}, 500);
 }else {
 $("#splash").css("display", "none");//同日2回目のアクセスでローディング画面非表示
 }  
