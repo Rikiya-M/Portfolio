@@ -234,13 +234,10 @@ position: relative;
     padding: 0 2.5rem;
   }
 
-  .work h1{
-    font-size: 24pt;
+  .works h1{
+    font-size: 42pt;
   }
 
-  .item {
-    width: 49.5%;/*横並びで2つ表示*/
-  }
   .sort-btn{
     font-size: 18pt;
   }
@@ -248,6 +245,14 @@ position: relative;
     padding-bottom: 1em;
   }
 
+  .item {
+    width: 49.5%;/*横並びで2つ表示*/
+  }
+
+
+  .skill h1{
+    font-size: 42pt;
+  }
   .skill{
     padding: 2rem;
   }
@@ -274,10 +279,13 @@ position: relative;
 
 /*横幅が480px以下になった際の指定*/
 @media only screen and (max-width: 480px) {
-  
+  .works h1{
+    font-size: 38pt;
+  }
+
   .sort-btn{
     justify-content: space-between;
-    font-size: 14pt;
+    font-size: 16pt;
   }
 
   .sort-btn li{
@@ -292,6 +300,23 @@ position: relative;
 
   .skill{
     padding: 1rem;
+  }
+  .skill h1{
+    font-size: 38pt;
+  }
+
+
+
+  .tool{
+    margin: 0 2.5rem;
+    left: 0%;
+  }
+  .tool li{
+    height: 80px;
+  }
+
+  #coding{
+    padding-right: 0 ;
   }
 
 
