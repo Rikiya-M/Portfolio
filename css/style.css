@@ -97,10 +97,9 @@ position: relative;
   height: 4px;
   border-radius: 48%;
   background:#0481A2;
-  /*アニメーションの指定*/
   transition: all .3s;
-  transform: scale(0.04, 1);/*X方向0.04、Y方向1*/
-  transform-origin:center bottom;/*中央下部基点*/
+  transform: scale(0.04, 1);
+  transform-origin:center bottom;
 }
 
 
@@ -113,7 +112,7 @@ position: relative;
 
 
 .grid {
-  position: relative;/*並び替えの基準点を指定*/
+  position: relative;
 }
 
 
@@ -138,10 +137,16 @@ position: relative;
 }
 
 .grid img{
-	width:100%;
-	height:auto;
-	vertical-align: bottom;/*画像の下にできる余白を削除*/
+  width:100%;
+  height:auto;
+  vertical-align: bottom;
+  transition: .3s;
 }
+
+.grid a :hover{
+  transform: scale(1.1);
+}
+
 
 .skill{
   position: relative;
