@@ -242,7 +242,10 @@ position: relative;
     width: 49.5%;/*横並びで2つ表示*/
   }
   .sort-btn{
-    font-size: 14pt;
+    font-size: 18pt;
+  }
+  .sort-btn li{
+    padding-bottom: 1em;
   }
 
   .skill{
@@ -274,6 +277,7 @@ position: relative;
   
   .sort-btn{
     justify-content: space-between;
+    font-size: 14pt;
   }
 
   .sort-btn li{
