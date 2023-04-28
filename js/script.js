@@ -1,8 +1,25 @@
 
 
-$(window).on('load',function(){
-    $("#splash").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェイドアウト
-});
+var splash_text = $.cookie('accessdate'); 
+var myD = new Date();
+var myYear = String(myD.getFullYear());
+var myMonth = String(myD.getMonth() + 1);
+var myDate = String(myD.getDate());
+    
+if (splash_text != myYear + myMonth + myDate) {//cookieデータとアクセスした日付を比較↓
+	$("#splash").css("display", "block");//１回目はローディングを表示
+	setTimeout(function () {
+		$("#splash").fadeOut(1500, function () {//1000ミリ秒（1秒）かけて画面がフェードアウト
+		var myD = new Date();
+		var myYear = String(myD.getFullYear());
+		var myMonth = String(myD.getMonth() + 1);
+		var myDate = String(myD.getDate());
+		$.cookie('accessdate', myYear + myMonth + myDate); //accessdateキーで年月日を記録
+	});
+}, 1000);
+}else {
+$("#splash").css("display", "none");//同日2回目のアクセスでローディング画面非表示
+}  
 
 
 
@@ -29,8 +46,8 @@ $(window).on('load',function(){
 			transform: 'scale(0.5)'
 		  }    
 		});
-		
-		//＝＝＝並び替えボタン設定
+	
+	
 		$('.sort-btn li').on('click',function(){			
 			$(".sort-btn .active").removeClass("active");	
 			var className = $(this).attr("class");			
@@ -43,11 +60,7 @@ $(window).on('load',function(){
 			}
 		});
 		
-		//＝＝＝ Fancyboxの設定
-		$('[data-fancybox]').fancybox({
-		 thumbs: {
-			autoStart: true, 
-		  },	
-		});
+
+
 			
 });
