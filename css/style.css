@@ -1,6 +1,9 @@
 @charset "utf-8";
-html{
-  scroll-behavior: smooth;
+
+
+body{
+  margin: 0;
+  padding: 0;
 }
 
 h1{
@@ -26,23 +29,43 @@ h1{
 
 
 
+header{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  display: flex;
+  margin: 0;
+  padding: 1.5rem;
+  z-index: 99;
+  justify-content: space-between;
+}
+.nav{
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.nav a{
+  text-decoration: none;
+  font-family: "adorn-copperplate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15pt;
+  color: #000000;
+}
+
+.nav :hover{
+  color: #FF9700;
+}
+
+nav ul li.current a,
+nav ul li a:hover{
+  color: #FF9700;
+}
 
 
-
-
-  header{
-    position: fixed;
-    top: 0;
-    display: flex;
-    margin: 0;
-    padding: 1.5rem;
-    z-index: 99;
-  }
-
-
-
-
-.works{
+#works{
   position: relative;
   top: 0;
   padding: 0 10%;
@@ -51,7 +74,7 @@ h1{
   z-index: 3;
 }
 
-.works h1{
+#works h1{
   position: relative;
   top: 50px;
   margin: 5rem 1rem;
@@ -92,7 +115,6 @@ position: relative;
   position: absolute;
   bottom: 0;
   left: 0;
-  /*線になる丸の形状*/
   width: 100%;
   height: 4px;
   border-radius: 48%;
@@ -112,7 +134,7 @@ position: relative;
 
 
 .grid {
-  position: relative;
+  position: relative;/*並び替えの基準点を指定*/
 }
 
 
@@ -125,10 +147,6 @@ position: relative;
   list-style:none;
 }
 
-.item:hover{
-  transform: scale(1.1);
-}
-
 
 .item-content {
   position: relative;
@@ -136,26 +154,28 @@ position: relative;
   height: 100%;
 }
 
+
 .grid img{
-  width:100%;
-  height:auto;
-  vertical-align: bottom;
+	width:100%;
+	height:auto;
+	vertical-align: bottom;
   transition: .3s;
 }
 
 .grid a :hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 
-.skill{
+#skill{
   position: relative;
   background-color: #ffffff;
-  padding: 4rem;
+  margin: 4rem;
+  padding-bottom: 2rem;
 }
 
 
-  .skill h1{
+  #skill h1{
     font-size: 45pt;
     margin: 1rem;
     text-align: center;
@@ -168,7 +188,7 @@ position: relative;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-row-gap: 40px;
   margin: 0 5rem;
   font-size: 21pt;
   font-family: "Hiragino Sans W8";
@@ -226,15 +246,50 @@ position: relative;
     -webkit-text-stroke: 1px #000000;
   }
   
+  #about{
+    position: relative;
+    background-color: #ffffff;
+    margin: 4rem 0;
+  }
+  
+  
+    #about h1{
+      font-size: 45pt;
+      text-align: center;
+    }
+
+    .profile{
+      background: url(../svg/about_full.svg);
+      width: 100%;
+      height: 75vh;
+      background-repeat: no-repeat;
+      background-position: top;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
 
 /*横幅が768px以下になった際の指定*/
 @media only screen and (max-width: 768px) {
+  header{
+    padding: 1rem;
+  }
 
-  .works{
+  #home{
+    transform: scale(0.8);
+  }
+
+  .nav a{
+    font-size: 12pt;
+  }
+
+  #works{
     padding: 0 2.5rem;
   }
 
-  .works h1{
+  #works h1{
     font-size: 42pt;
   }
 
@@ -246,15 +301,14 @@ position: relative;
   }
 
   .item {
-    width: 49.5%;/*横並びで2つ表示*/
+    width: 49.5%;
   }
 
-
-  .skill h1{
-    font-size: 42pt;
-  }
-  .skill{
+  #skill{
     padding: 2rem;
+  }
+  #skill h1{
+    font-size: 42pt;
   }
 
   .tool{
@@ -272,6 +326,15 @@ position: relative;
     .s5 { grid-area: 5 / 1 / 6 / 2; }
     .s6 { grid-area: 6 / 1 / 7 / 2; }
     .s7 { grid-area: 7 / 1 / 8 / 2; }
+
+    #about{
+      padding: 2rem 0;
+    }
+    #about h1{
+      font-size: 42pt;
+    }
+
+
 }
 
 
@@ -279,7 +342,12 @@ position: relative;
 
 /*横幅が480px以下になった際の指定*/
 @media only screen and (max-width: 480px) {
-  .works h1{
+
+  .nav{
+    display: none;
+  }
+
+  #works h1{
     font-size: 38pt;
   }
 
@@ -298,10 +366,10 @@ position: relative;
     padding: 1rem;
   }
 
-  .skill{
+  #skill{
     padding: 1rem;
   }
-  .skill h1{
+  #skill h1{
     font-size: 38pt;
   }
 
@@ -321,17 +389,25 @@ position: relative;
   }
 
 
+  #about{
+    padding: 1rem 0;
+  }
+  #about h1{
+    font-size: 38pt;
+  }
+  .profile{
+    background: url(../svg/about_480.svg);
+    width: 100%;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0;
+    padding: 0;
+  }
+
 }
 
 
 
 
 
-/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
-.fancybox-thumbs {
-    background: transparent!important;
-}
-
-.fancybox-thumbs__list a:before {
-    border: 6px solid #FA999B;
-}
