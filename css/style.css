@@ -159,11 +159,13 @@ position: relative;
 	width:100%;
 	height:auto;
 	vertical-align: bottom;
-  transition: .3s;
+  	transition: .3s;
+	opacity: 0.5;
 }
 
 .grid a :hover{
-  transform: scale(1.05);
+  	transform: scale(1.05);
+	opacity: 1;
 }
 
 
