@@ -160,7 +160,7 @@ position: relative;
 	height:auto;
 	vertical-align: bottom;
   	transition: .3s;
-	opacity: 0.5;
+	opacity: 0.75;
 }
 
 .grid a :hover{
